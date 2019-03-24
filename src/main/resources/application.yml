@@ -1,2 +1,6 @@
-pageController:
-  msg: value form yaml file
+myconfig:
+  app-name: Boot App
+  app-Description: ${myconfig.app-name} is a Spring Boot App
+  admin-First-Name: Imran
+  admin-last-name: Abdul
+  adminEmail: Hitimran@gmail.com

@@ -10,9 +10,13 @@ public class PageController {
     @Value("${pageController.msg}")
     private String controllerMsg;
 
+    @Value("${app.description}")
+    private String appDescription;
+
+
     @RequestMapping("/")
     public String printOnPage()
     {
-        return controllerMsg;
+        return controllerMsg+"\n"+appDescription;
     }
 }

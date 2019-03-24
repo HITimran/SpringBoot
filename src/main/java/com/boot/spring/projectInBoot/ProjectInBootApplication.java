@@ -1,8 +1,10 @@
 package com.boot.spring.projectInBoot;
 
+import com.boot.services.MyAppConfig;
 import com.boot.services.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +13,7 @@ import java.util.Arrays;
 
 @ComponentScan({"com.boot.services","com.boot.spring.projectInBoot"})
 @SpringBootApplication
+@EnableConfigurationProperties
 public class ProjectInBootApplication {
 
 	@Bean
@@ -28,7 +31,10 @@ public class ProjectInBootApplication {
 		{
 			System.out.println(name);
 		}
-		System.out.println(ctx.getBean("user").toString());
+		System.out.println("the value is "+ctx.getBean("user").toString());
+
+        MyAppConfig config=(MyAppConfig)ctx.getBean("myAppConfig");
+        System.out.println( config.toString());
 	}
 
 }
