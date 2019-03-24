@@ -25,6 +25,9 @@ public class ProjectInBootApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx=SpringApplication.run(ProjectInBootApplication.class, args);
 
+
+		System.out.println("here's my data source Config "+ctx.getBean("dataSource").toString());
+
 		String [] beanNames=ctx.getBeanDefinitionNames();
 		Arrays.sort(beanNames);
 		for(String name: beanNames)

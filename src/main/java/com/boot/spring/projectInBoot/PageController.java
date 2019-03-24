@@ -13,10 +13,16 @@ public class PageController {
     @Value("${app.description}")
     private String appDescription;
 
+    @Value("${spring.profiles.active}")
+    private String environment;
+
+    @Value("${msg}")
+    private String msg;
+
 
     @RequestMapping("/")
     public String printOnPage()
     {
-        return controllerMsg+"\n"+appDescription;
+        return msg+"  \n"+controllerMsg+"\n"+appDescription;
     }
 }
